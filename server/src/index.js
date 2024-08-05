@@ -30,7 +30,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: process.env.URLCHAT || "http://localhost:5173",
         methods: ["GET", "POST"]
     }
 });
@@ -41,7 +41,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/images', express.static(path.join(__dirname, '../public/images')));
 
 app.use(cors({
-    origin: ['http://localhost:5173'],
+    origin: process.env.URLFRONTEND || 'http://localhost:5173',
     methods: ['GET', 'POST', 'DELETE', 'PUT'],
 }));
 

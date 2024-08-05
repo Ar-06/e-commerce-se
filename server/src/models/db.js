@@ -6,6 +6,8 @@ const DB_PASSWORD = process.env.DB_PASSWORD || 'Ar060904';
 const DB_NAME = process.env.DB_NAME || 'my_store';
 const DB_PORT = process.env.DB_PORT || 3306;
 
+//mysql://root:MNEEABmzEhcfetVRMNwbIfIzCCckZWKK@monorail.proxy.rlwy.net:18311/railway
+
 const connection = mysql.createConnection({
     host: DB_HOST,
     user: DB_USER,

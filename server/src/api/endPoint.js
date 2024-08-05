@@ -48,9 +48,9 @@ router.post('/login', login);
 router.post('/products', authenticateJWT ,upload.single('image'), product);
 router.post('/contact', contact);
 router.get('/users/products', authenticateJWT, getProductsByUser);
-router.get('/products/:id', authenticateJWT, getProductById);
+router.get('/products/:productId', authenticateJWT, getProductById);
 router.get('/products', getProducts);
-router.delete('/users/products/:id', authenticateJWT, deleteProduct);
-router.put('/users/products/:id', authenticateJWT, upload.single('image'), updateProduct);
+router.delete('/users/products/:productId', authenticateJWT, deleteProduct);
+router.put('/users/products/:productId', authenticateJWT, upload.single('image'), updateProduct);
 
 module.exports = router;

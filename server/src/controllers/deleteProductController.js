@@ -11,9 +11,9 @@ module.exports.deleteProduct = (req,res) => {
         }
 
         const userId = decoded.userId;
-        const productId = req.params.id;
+        const productId = req.params.productId;
 
-        const query = 'DELETE FROM products WHERE user_id = ? AND id = ?';
+        const query = 'DELETE FROM products WHERE user_id = ? AND idProduct = ?';
         connection.query(query, [userId, productId], (error, results) => {
             if(error){
                 console.error('Error al eliminar producto', error);

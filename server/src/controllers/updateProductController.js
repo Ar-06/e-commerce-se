@@ -11,12 +11,12 @@ module.exports.updateProduct = (req, res) => {
         }
 
         const userId = decoded.userId;
-        const productId = req.params.id;
+        const productId = req.params.productId;
         const image = req.file.filename;
 
         const {name, description, category, price, stock} = req.body;
 
-        const query = 'UPDATE products SET name = ?, description = ?, category = ?, price = ?, stock = ?, image = ? WHERE user_id = ? AND id = ?';
+        const query = 'UPDATE products SET name = ?, description = ?, category = ?, price = ?, stock = ?, image = ? WHERE user_id = ? AND idProduct = ?';
 
         connection.query(query, [name, description, category, price, stock, image, userId, productId], (error, results) => {
             if(error){

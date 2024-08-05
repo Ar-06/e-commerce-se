@@ -10,9 +10,9 @@ module.exports.getProductById = (req, res) => {
         }
 
         const userId = decoded.userId;
-        const productId = req.params.id;
+        const productId = req.params.productId;
 
-        const query = 'SELECT * FROM products WHERE id = ? AND user_id = ?';
+        const query = 'SELECT * FROM products WHERE idProduct = ? AND user_id = ?';
 
         connection.query(query, [productId, userId], (error, results) => {
             if (error) {
